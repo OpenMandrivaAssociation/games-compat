@@ -8,7 +8,6 @@ Version:	%{version}
 Release:	%{release}
 URL:		http://mandriva.com/
 Group:		Games/Other
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 License:	GPL
 BuildArch:	noarch
 Requires:	openssl-devel openal SDL-devel libpng libstdc++6 libstdc++5 libstdc++2.10
