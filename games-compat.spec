@@ -1,6 +1,6 @@
 %define	name	games-compat
 %define	version 0.3
-%define	release	%mkrel 5
+%define	release	%mkrel 6
 
 Name:		%{name} 
 Summary:	Provides compatibility with binary Linux games
@@ -10,7 +10,6 @@ URL:		http://mandriva.com/
 Group:		Games/Other
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 License:	GPL
-BuildArch:	noarch
 Requires:	openssl-devel openal SDL-devel libpng libstdc++6 libstdc++5 libstdc++2.10
 
 %description
