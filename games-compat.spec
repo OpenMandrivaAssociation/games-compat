@@ -1,6 +1,6 @@
 %define	name	games-compat
 %define	version 0.3
-%define	release	%mkrel 8
+%define	release	%mkrel 9
 
 Name:		%{name} 
 Summary:	Provides compatibility with binary Linux games
