@@ -1,18 +1,33 @@
 Name:		games-compat
 Summary:	Provides compatibility with binary Linux games
-Version:	0.4
+Version:	0.5
 Release:	1
 URL:		http://mandriva.com/
 Group:		Games/Other
 License:	GPL
-# The requires are versioned to ensure we pull in the 32bit versions, and not 64bit
-# versions
-Requires:	libopenssl1.0.0 libopenal1 libSDL1.2_0 libpng3 libstdc++6 libstdc++5
-# libstdc++2.10 is in 32bit contrib, so it can't be a requirement on 64bit
+ExclusiveArch: i586 x86_64
+
+# -- Common requires/suggests --
+# Basic common 32-bit libs
+Requires: libopenssl1.0.0 libopenal1 libpng3 libpng15 libpng0 libstdc++6 libstdc++5 libjpeg62 libfreetype2 libxpm4 libxmu6 libnas2 libgtk+2.0_0
+# 32bit SDL libs (first two are 'current arch', the rest are 32bit)
+Requires: libSDL1.2_0 libSDL_mixer1.2_0 libSDL_ttf2.0_0 libSDL_net1.2_0 libSDL_image1.2_0
+# These are nice to have, but are usually not hard deps
+Suggests: libhal1
+# Packages in 32bit contrib
+%define contrib32Pkgs libstdc++2.10 libgtk+1.2 libopenssl0.9.8
+
 %ifarch x86_64
-Suggests:   libstdc++2.10
+# -- 64bit-only requires/suggests --
+Requires: lib64SDL1.2_0 lib64SDL_mixer1.2_0 lib64SDL_ttf2.0_0 lib64SDL_net1.2_0 lib64SDL_image1.2_0 lib64gtk+2.0_0
+# Packages in 32bit contrib can't be required, as contrib is not added by default on 64bit
+Suggests: %contrib32Pkgs
+# GTK engines, when using a 32bit app on 64bit they will look better if the engine is
+# installed (but they're not strictly required)
+Suggests: libgtk-engines2 libmurrine
 %else
-Requires:   libstdc++2.10
+# -- 32bit-only requires/suggests --
+Requires: %contrib32Pkgs
 %endif
 
 %ifarch x86_64
@@ -24,8 +39,9 @@ Requires:   libstdc++2.10
 
 %description
 This package provides and depends upon libraries that is used in
-many commercial Linux games. If you are having problems running some
-commercial games, you should install this package.
+many commercial Linux games. If you plan to run commercial Linux games
+you should install this package. It may also help you run som non-free
+software.
 
 %install
 mkdir -p %{buildroot}%{libdir}
