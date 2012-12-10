@@ -62,3 +62,44 @@ export DONT_SYMLINK_LIBS=1
 
 %files 
 %{libdir}/*
+
+
+%changelog
+* Tue Sep 20 2011 Eskild Hustvedt <eskild@mandriva.org> 0.5-1
++ Revision: 700611
+- Require the new libpng packages in 2012+ only
+
+* Mon Sep 19 2011 Eskild Hustvedt <eskild@mandriva.org> 0.5-1
++ Revision: 700387
+- Adding a lot of new requires/suggests for common libraries
+
+* Fri Sep 09 2011 Eskild Hustvedt <eskild@mandriva.org> 0.4-1
++ Revision: 699135
+- Added support for installing on 64bit
+
+* Thu Dec 09 2010 Oden Eriksson <oeriksson@mandriva.com> 0.3-9mdv2011.0
++ Revision: 618396
+- the mass rebuild of 2010.0 packages
+
+* Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 0.3-8mdv2010.0
++ Revision: 429026
+- rebuild
+
+* Thu Aug 07 2008 Thierry Vignaud <tv@mandriva.org> 0.3-7mdv2009.0
++ Revision: 266830
+- rebuild early 2009.0 package (before pixel changes)
+
+* Sun May 11 2008 Nicolas Lécureuil <nlecureuil@mandriva.com> 0.3-6mdv2009.0
++ Revision: 205711
+- Should not be noarch ed
+
+* Fri Dec 21 2007 Olivier Blin <blino@mandriva.org> 0.3-5mdv2008.1
++ Revision: 136426
+- restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+  + Eskild Hustvedt <eskild@mandriva.org>
+    - Import games-compat
+
