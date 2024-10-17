@@ -2,7 +2,7 @@ Name:		games-compat
 Summary:	Provides compatibility with binary Linux games
 Version:	0.5
 Release:	1
-URL:		http://mandriva.com/
+URL:		https://mandriva.com/
 Group:		Games/Other
 License:	GPL
 ExclusiveArch: i586 x86_64
